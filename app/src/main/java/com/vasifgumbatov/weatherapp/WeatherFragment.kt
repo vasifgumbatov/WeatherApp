@@ -1,5 +1,6 @@
 package com.vasifgumbatov.weatherapp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,11 +12,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vasifgumbatov.weatherapp.DataClass.CurrentWeatherResponse
 import com.vasifgumbatov.weatherapp.databinding.FragmentWeatherBinding
+import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class WeatherFragment : Fragment() {
+@AndroidEntryPoint
+class WeatherFragment @Inject constructor() : Fragment() {
     private lateinit var binding: FragmentWeatherBinding
     private val viewModel by viewModels<WeatherVM>()
     private var adapterWeather = WeatherAdapter()
@@ -28,13 +32,15 @@ class WeatherFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         adapterWeather = WeatherAdapter()
+
         val apiKey = "cd2d46eaef6f4c9db83105148241009"
         val city = "Baku"
-        viewModel.getVM(city, apiKey)
+
+        viewModel.getWeather(city, apiKey)
         viewModel.getWeatherData().observe(viewLifecycleOwner, Observer { weatherResponse ->
             weatherResponse?.let {
                 val currentWeather = listOf(it.current)

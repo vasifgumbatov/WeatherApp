@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.navigation.fragment.NavHostFragment
 import com.vasifgumbatov.weatherapp.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class MainActivity @Inject constructor() : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

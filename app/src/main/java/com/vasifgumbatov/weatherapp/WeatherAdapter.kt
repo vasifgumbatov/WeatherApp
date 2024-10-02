@@ -8,7 +8,6 @@ import com.vasifgumbatov.weatherapp.DataClass.CurrentWeather
 import com.vasifgumbatov.weatherapp.databinding.ItemsBinding
 
 class WeatherAdapter: RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>() {
-
     private var weatherList: List<CurrentWeather> = listOf()
 
     @SuppressLint("NotifyDataSetChanged")
@@ -20,7 +19,6 @@ class WeatherAdapter: RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>() {
     inner class WeatherViewHolder(private val binding: ItemsBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(weather: CurrentWeather){
-
 //            binding.highLowTemp.text = "H: ${weather.temperature} `C"
             binding.tempText.text = weather.temperature.toString()
         }
@@ -40,6 +38,4 @@ class WeatherAdapter: RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>() {
         val weather = weatherList[position]
         holder.bind(weather)
     }
-
-
 }

@@ -14,17 +14,13 @@ object ApiManager {
         })
         .build()
 
-    private val client: Retrofit = Retrofit.Builder()
+    private val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl("https://api.weatherapi.com/v1/")
         .addConverterFactory(GsonConverterFactory.create())
         .client(okhttpClient)
         .build()
-//        .addCallAdapterFactory(CoroutineCallAdapterFactory())
-//        .addConverterFactory(GsonConverterFactory.create())
-//        .build()
-//
 
     fun getApiService(): WeatherApiService {
-        return client.create(WeatherApiService::class.java)
+        return retrofit.create(WeatherApiService::class.java)
     }
 }

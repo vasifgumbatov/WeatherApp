@@ -11,10 +11,11 @@ interface WeatherApiService {
     fun getCurrentWeatherByCity(
         @Query("q") city: String,
         @Query("key") apiKey: String
-    ): Call<CurrentWeatherResponse>
+    ): Response<CurrentWeatherResponse>
 
     @GET("current.json")
-    fun getCurrentWeatherByCityNew(
-        @Query("q") city: String
+    suspend fun getCurrentWeatherByCityNew(
+        @Query("q") city: String,
+        @Query("key") apiKey: String
     ): Response<CurrentWeatherResponse>
 }

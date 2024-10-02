@@ -1,5 +1,5 @@
 [versions]
-agp = "8.6.0"
+agp = "8.6.1"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -10,15 +10,16 @@ kotlinxCoroutinesAndroid = "1.7.3"
 material = "1.12.0"
 activity = "1.9.2"
 constraintlayout = "2.1.4"
-navigationFragmentKtxVersion = "2.8.0"
-navigationUiKtxVersion = "2.8.0"
+navigationFragmentKtxVersion = "2.8.1"
+navigationUiKtxVersion = "2.8.1"
 retrofit = "2.11.0"
-safeArgs = "2.7.7"
-lifecycleLivedataKtx = "2.8.3"
-lifecycleViewmodelKtx = "2.8.3"
+safeArgs = "2.8.1"
+lifecycleLivedataKtx = "2.8.6"
+lifecycleViewmodelKtx = "2.8.6"
 coil = "2.4.0"
-okHttp = "4.11.0"
+okHttp = "4.12.0"
 loggingInterceptor = "4.11.0"
+hilt = "2.46.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -28,22 +29,28 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
 androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 okHttp = {group ="com.squareup.okhttp3", name = "okhttp", version.ref = "okHttp"}
 loggingInterceptor = {group ="com.squareup.okhttp3", name = "logging-interceptor", version.ref = "loggingInterceptor"}
 coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
 
+hilt = {group = "com.google.dagger", name = "hilt-android", version.ref = "hilt"}
+hiltCompiler = {group ="com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 safe-args = { id = "androidx.navigation.safeargs", version.ref = "safeArgs" }
+hilt = {id = "com.google.dagger.hilt.android", version.ref = "hilt"}
 
 

@@ -2,8 +2,9 @@ package com.vasifgumbatov.weatherapp
 
 import okhttp3.Interceptor
 import okhttp3.Response
+import javax.inject.Inject
 
-class WeatherInterceptor : Interceptor {
+class WeatherInterceptor @Inject constructor () : Interceptor {
     private val key = "cd2d46eaef6f4c9db83105148241009"
     private val lang = "en"
 
